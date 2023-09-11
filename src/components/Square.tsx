@@ -1,13 +1,18 @@
 // 'use client'
 import clsx from 'clsx'
 import styles from '@/styles/components/Square.module.scss'
+import Card from './Card'
 
 interface Props {
+  card?: Game.Card
   isOwned?: boolean
-  tribe?: string
 }
-export default function Square({ isOwned, tribe }: Props) {
-  const cssClasses = clsx(styles.wrapper, isOwned ? 'owned' : 'adversary')
+export default function Square({ card, isOwned }: Props) {
+  const cssClasses = clsx(styles.wrapper, card ? 'occupied' : 'empty')
 
-  return <div className={cssClasses}>{tribe || '?'}</div>
+  return (
+    <div className={cssClasses}>
+      {card && <Card {...card} isOwned={isOwned} />}
+    </div>
+  )
 }
