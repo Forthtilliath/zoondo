@@ -1,0 +1,8 @@
+@use '@/styles/abstracts/variables.module' as *;
+
+.wrapper {
+  width: 100px;
+  aspect-ratio: 1;
+  border: 2px dotted yellowgreen;
+  box-sizing: border-box;
+}

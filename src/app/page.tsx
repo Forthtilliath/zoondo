@@ -1,11 +1,49 @@
-import Description from '@/components/Description'
-import Hero from '@/components/Hero'
+import Board from '@/components/Board'
+import Square from '@/components/Square'
 
 export default function Home() {
+  //let board: Game.Board = Array<Game.Square>
+
   return (
     <>
-      <Hero />
-      <Description />
+      <Board>
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+        <Square />
+      </Board>
     </>
   )
 }

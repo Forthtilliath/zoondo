@@ -1,0 +1,8 @@
+@use '@/styles/abstracts/variables.module' as *;
+
+.wrapper {
+  width: $gameBoardSize;
+  aspect-ratio: 1;
+  display: flex;
+  flex-flow: row wrap;
+}
