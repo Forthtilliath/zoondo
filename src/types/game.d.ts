@@ -7,7 +7,7 @@ declare global {
     type Square = {
       x: number
       y: number
-      card: Card?
+      card?: Card
     }
 
     type Card = {
