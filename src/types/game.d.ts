@@ -10,13 +10,16 @@ declare global {
       card?: Card
     }
 
+    type Corner = number | '*'
+    type Move = [number, number][]
+
     type Card = {
       slug: string
       name: string
       type: string
-      corners: Array<number | '*'>
+      corners: [NW: Corner, NE: Corner, SE: Corner, SW: Corner]
       value: number
-      moves: Array
+      moves: Array<Move>
     }
   }
 }
