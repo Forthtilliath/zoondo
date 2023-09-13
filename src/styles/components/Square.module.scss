@@ -1,0 +1,11 @@
+@use '@/styles/abstracts/variables.module' as *;
+
+.wrapper {
+  width: calc(100% / $gameSquaresX);
+  aspect-ratio: 1;
+  border: 1px solid $baseColor;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
