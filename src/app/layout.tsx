@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import '@/styles/app.scss'
 import styles from '@/styles/layouts/Root.module.scss'
 import Hotlinks from '@/components/Hotlinks'
-import Search from '@/components/Search'
+import Search from '@/components/samples/Search'
 
 export const metadata: Metadata = {
   title: 'Next Template',
