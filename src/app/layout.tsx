@@ -1,19 +1,25 @@
+import type { PropsWithChildren } from 'react'
 import type { Metadata } from 'next'
+
+import { Hotlinks, Search } from '@/components/samples'
+import * as utils from '@/utils'
+
 import '@/styles/app.scss'
 import styles from '@/styles/layouts/Root.module.scss'
-import Hotlinks from '@/components/Hotlinks'
-import Search from '@/components/samples/Search'
 
 export const metadata: Metadata = {
-  title: 'Next Template',
-  description: "Change this! It's meant to help SEO for your project",
+  title: 'Zoondo',
+  description: utils.removeExtraSpaces(`
+    Explorez l'univers captivant du jeu de cartes \
+    Zoondo sur notre site. Plongez dans des batailles \
+    stratégiques, collectionnez des cartes puissantes \
+    et défiez d'autres joueurs pour devenir le maître \
+    Zoondo. Rejoignez - nous dès maintenant et découvrez \
+    un monde de compétition et de divertissement !
+  `),
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
       <body className={styles.wrapper}>
