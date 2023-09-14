@@ -1,6 +1,6 @@
 'use client'
 import clsx from 'clsx'
-import styles from '@/styles/components/Search.module.scss'
+import styles from '@/styles/components/samples/Search.module.scss'
 import { FormEvent, useRef, useState } from 'react'
 
 export default function Search() {
