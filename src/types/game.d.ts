@@ -1,12 +1,15 @@
 declare global {
+  type Position = {
+    x: number
+    y: number
+  }
+
   namespace Game {
     type Board = {
       squares: Array<Square>
     }
 
-    type Square = {
-      x: number
-      y: number
+    type Square = Position & {
       card?: Card
     }
 
@@ -34,6 +37,12 @@ declare global {
         moves?: Card['moves']
       }
     }
+
+    type CardPlayed = Card & {
+      isOwned: boolean
+    }
+
+    type CardWithPosition = CardPlayed & Position
   }
 }
 export {}
