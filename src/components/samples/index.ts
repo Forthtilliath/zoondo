@@ -1,0 +1,5 @@
+export { default as Description } from './Description'
+export { default as H1 } from './H1'
+export { default as Hero } from './Hero'
+export { default as Hotlinks } from './Hotlinks'
+export { default as Search } from './Search'
