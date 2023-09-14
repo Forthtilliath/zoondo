@@ -1,0 +1,85 @@
+@use '@/styles/abstracts/variables.module' as *;
+
+.wrapper {
+  width: 50vw;
+
+  .card {
+    width: 300px;
+    aspect-ratio: 9/16;
+    background-color: black;
+    border: 2px dotted cyan;
+
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 0.6fr 0.7fr 2.3fr 0.7fr 0.7fr;
+    grid-template-rows: 0.5fr 2.1fr 0.9fr 0.5fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      'cor-tl name name name cor-tr'
+      'picture picture picture picture picture'
+      '. type moves value .'
+      'cor-bl type moves value cor-br';
+    .cor-tl {
+      grid-area: cor-tl;
+    }
+    .cor-tr {
+      grid-area: cor-tr;
+    }
+    .cor-bl {
+      grid-area: cor-bl;
+    }
+    .cor-br {
+      grid-area: cor-br;
+    }
+    .moves {
+      grid-area: moves;
+      display: flex;
+      flex-flow: row wrap;
+      gap: 1px;
+      aspect-ratio: 1;
+      align-self: center;
+
+      .square {
+        width: calc(20% - 1px);
+        aspect-ratio: 1;
+        border: 1px solid lightgray;
+        box-sizing: border-box;
+      }
+    }
+    .type {
+      grid-area: type;
+    }
+    .value {
+      grid-area: value;
+    }
+    .picture {
+      grid-area: picture;
+    }
+    .name {
+      grid-area: name;
+    }
+
+    .cor-tl,
+    .cor-tr,
+    .cor-bl,
+    .cor-br {
+      border-radius: 50%;
+      aspect-ratio: 1;
+      background-color: orangered;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-self: center;
+    }
+    .picture,
+    .type {
+      position: relative;
+    }
+    .name,
+    .value {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
