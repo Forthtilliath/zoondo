@@ -1,11 +1,8 @@
-// 'use client'
-import clsx from 'clsx'
+import type { PropsWithChildren } from 'react'
+
 import styles from '@/styles/components/Board.module.scss'
-import { ReactNode } from 'react'
 
-type Props = { children?: ReactNode }
+type Props = PropsWithChildren
 export default function Board({ children }: Props) {
-  const cssClasses = clsx(styles.wrapper)
-
-  return <div className={cssClasses}>{children}</div>
+  return <div className={styles.wrapper}>{children}</div>
 }
