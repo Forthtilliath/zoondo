@@ -27,12 +27,12 @@ export default function CardSample({
         <div className={styles['cor-tr']}>{corners[1]}</div>
         <div className={styles['cor-bl']}>{corners[2]}</div>
         <div className={styles['cor-br']}>{corners[3]}</div>
-        <div className={styles['moves']}>
+        <div className={styles.moves}>
           {squares.map((sq) => (
             <div key={`${sq.x}-${sq.y}`} className={styles.square} />
           ))}
         </div>
-        <div className={styles['type']}>
+        <div className={styles.type}>
           <Image
             src={`/assets/types/${type}.png`}
             alt={type}
@@ -40,11 +40,11 @@ export default function CardSample({
             style={{ objectFit: 'contain' }}
           />
         </div>
-        <div className={styles['value']}>{value}</div>
-        <div className={styles['picture']}>
+        <div className={styles.value}>{value}</div>
+        <div className={styles.picture}>
           <Image src={`/assets/tribes/${slug}.png`} alt={slug} fill />
         </div>
-        <div className={styles['name']}>{name}</div>
+        <div className={styles.name}>{name}</div>
       </div>
     </div>
   )
