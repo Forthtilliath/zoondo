@@ -1,4 +1,4 @@
-import styles from '@/styles/components/Hotlinks.module.scss'
+import styles from '@/styles/components/samples/Hotlinks.module.scss'
 import Link from 'next/link'
 
 export default function Hotlinks() {

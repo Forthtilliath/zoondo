@@ -1,4 +1,4 @@
-import styles from '@/styles/components/Hero.module.scss'
+import styles from '@/styles/components/samples/Hero.module.scss'
 import H1 from './H1'
 
 export default function Hero() {

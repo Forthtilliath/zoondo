@@ -1,6 +1,6 @@
 // 'use client'
 // import clsx from 'clsx'
-import styles from '@/styles/components/H1.module.scss'
+import styles from '@/styles/components/samples/H1.module.scss'
 
 interface Props {
   label: string

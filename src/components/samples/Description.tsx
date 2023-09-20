@@ -1,4 +1,4 @@
-import styles from '@/styles/components/Description.module.scss'
+import styles from '@/styles/components/samples/Description.module.scss'
 
 export default function Description() {
   return (
