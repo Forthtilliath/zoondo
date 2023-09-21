@@ -1,9 +1,4 @@
 declare global {
-  type Position = {
-    x: number
-    y: number
-  }
-
   namespace Game {
     type Board = {
       squares: Array<Square>
