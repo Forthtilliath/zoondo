@@ -44,6 +44,25 @@
         aspect-ratio: 1;
         border: 1px solid lightgray;
         box-sizing: border-box;
+        position: relative;
+
+        &::after {
+          content: '●';
+          width: 100%;
+          aspect-ratio: 1;
+          position: absolute;
+          color: black;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        &.origin {
+          background-color: red;
+        }
+        &.move {
+          background-color: yellow;
+        }
       }
     }
     .type {

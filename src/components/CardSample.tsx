@@ -28,9 +28,13 @@ export default function CardSample({
         <div className={styles['cor-br']}>{corners[2]}</div>
         <div className={styles['cor-bl']}>{corners[3]}</div>
         <div className={styles.moves}>
-          {squares.map((sq) => (
-            <div key={`${sq.x}-${sq.y}`} className={styles.square} />
-          ))}
+          {squares.map((sq) => {
+            const cssClasses = clsx(styles.square, {
+              [styles.origin]: sq.x === 0 && sq.y === 0,
+              [styles.move]: moves.some(([x, y]) => x === sq.x && y === sq.y),
+            })
+            return <div key={`${sq.x}-${sq.y}`} className={cssClasses} />
+          })}
         </div>
         <div className={styles.type}>
           <Image
