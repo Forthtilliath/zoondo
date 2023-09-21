@@ -1,8 +1,10 @@
 import clsx from 'clsx'
 import styles from '@/styles/components/CardSample.module.scss'
 import Image from 'next/image'
+import * as utils from '@/utils'
 
 type Props = Game.Card
+
 export default function CardSample({
   slug,
   name,
@@ -11,17 +13,10 @@ export default function CardSample({
   value,
   moves,
 }: Props) {
-  let squares = []
-  for (let x = -2; x <= 2; x++) {
-    for (let y = -2; y <= 2; y++) {
-      squares.push({ x, y })
-    }
-  }
-
-  const cssClasses = clsx(styles.wrapper)
+  let squares = utils.generatePositions(-2, 2)
 
   return (
-    <div className={cssClasses}>
+    <div className={styles.wrapper}>
       <div className={styles.card}>
         <div className={styles['cor-tl']}>{corners[0]}</div>
         <div className={styles['cor-tr']}>{corners[1]}</div>
