@@ -14,15 +14,15 @@ declare global {
     }
 
     type Corner = number | '*'
-    type Move = [X: number, Y: number][]
+    type Move = [X: number, Y: number]
     type Type =
-      | 'Chief'
-      | 'Priest'
-      | 'Monster'
-      | 'Elite'
-      | 'Soldier'
-      | 'Emblem'
-      | 'Asset' // ???
+      | 'chief'
+      | 'priest'
+      | 'monster'
+      | 'elite'
+      | 'soldier'
+      | 'emblem'
+      | 'asset' // ???
     // Hero ???
 
     type Card = {
