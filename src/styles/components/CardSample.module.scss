@@ -38,6 +38,7 @@
       gap: 1px;
       aspect-ratio: 1;
       align-self: center;
+      position: relative;
 
       .square {
         width: calc(20% - 1px);
@@ -63,6 +64,10 @@
         &.move {
           background-color: yellow;
         }
+      }
+
+      svg {
+        position: absolute;
       }
     }
     .type {
