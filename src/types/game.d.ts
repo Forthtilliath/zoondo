@@ -17,8 +17,9 @@ declare global {
       | 'elite'
       | 'soldier'
       | 'emblem'
-      | 'asset' // ???
-    // Hero ???
+      | 'asset'
+      | 'hero'
+      | 'trump'
 
     type Card = {
       slug: string
@@ -27,17 +28,27 @@ declare global {
       corners: [NW: Corner, NE: Corner, SE: Corner, SW: Corner]
       value: number
       moves: Array<Array<Move>>
-      variants?: {
-        corners?: Card['corners']
-        moves?: Card['moves']
-      }
+      // power:string,
+      // resolver:function
+      // variants?: {
+      //   corners?: Card['corners']
+      //   moves?: Card['moves']
+      // }
     }
 
-    type CardPlayed = Card & {
+    type Tribe = {
+      slug: string
+      edition: string
+      name: string
+      description: string
+      fighters: Record<string, Card>
+    }
+
+    type CardOwned = Card & {
       isOwned: boolean
     }
 
-    type CardWithPosition = CardPlayed & Position
+    type CardWithPosition = CardOwned & Position
   }
 }
 export {}
