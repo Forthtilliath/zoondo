@@ -1,9 +1,4 @@
 declare global {
-  type Position = {
-    x: number
-    y: number
-  }
-
   namespace Game {
     type Board = {
       squares: Array<Square>
@@ -14,15 +9,15 @@ declare global {
     }
 
     type Corner = number | '*'
-    type Move = [X: number, Y: number][]
+    type Move = [X: number, Y: number]
     type Type =
-      | 'Chief'
-      | 'Priest'
-      | 'Monster'
-      | 'Elite'
-      | 'Soldier'
-      | 'Emblem'
-      | 'Asset' // ???
+      | 'chief'
+      | 'priest'
+      | 'monster'
+      | 'elite'
+      | 'soldier'
+      | 'emblem'
+      | 'asset' // ???
     // Hero ???
 
     type Card = {
@@ -31,7 +26,7 @@ declare global {
       type: Type
       corners: [NW: Corner, NE: Corner, SE: Corner, SW: Corner]
       value: number
-      moves: Array<Move>
+      moves: Array<Array<Move>>
       variants?: {
         corners?: Card['corners']
         moves?: Card['moves']

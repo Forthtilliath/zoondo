@@ -2,9 +2,21 @@ export const sampleCard: Game.Card = {
   slug: 'cloboulon',
   name: 'ValhallaCode',
   corners: [3, 3, 1, '*'],
-  type: 'Elite',
+  type: 'elite',
   value: 10,
-  moves: [],
+  moves: [
+    [[0, 1]],
+    [[1, 1]],
+    [[1, 0]],
+    [[1, -1]],
+    [[0, -1]],
+    [[-1, -1]],
+    [[-1, 0]],
+    [
+      [-1, 1],
+      [-2, 2],
+    ],
+  ],
 }
 
 export const cards: Array<Game.CardWithPosition> = [

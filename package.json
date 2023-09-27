@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "release": "standard-version --no-verify"
+    "release": "standard-version --no-verify",
+    "bump": "npx npm-check-updates -i"
   },
   "dependencies": {
     "@types/node": "20.6.3",
