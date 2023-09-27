@@ -1,18 +1,5 @@
-/**
- * The grid is a __square grid__
- * @param {number} min - The __minimal value__
- * @param {number} max - The __maximal value__
- * @returns {Array<{x: number, y: number}>} An array of positions
- */
 export function generatePositions(min: number, max: number): Position[]
-/**
- * The grid is a __rectangular grid__
- * @param {number} minX - The __minimal x value__
- * @param {number} maxX - The __maximal x value__
- * @param {number} minY - The __minimal y value__
- * @param {number} maxY - The __maximal y value__
- * @returns {Array<{x: number, y: number}>} An array of positions
- */
+
 export function generatePositions(
   minX: number,
   maxX: number,
@@ -35,4 +22,48 @@ export function generatePositions(
   }
 
   return positions
+}
+
+const SQUARE_SIZE = -20 //%
+type Coordonate = Position
+type Transition = [Coordonate, Coordonate]
+
+export function positionsToTransition(
+  src: Position,
+  dst: Position
+): [Coordonate, Coordonate] {
+  let coordSrc = { x: src.x * SQUARE_SIZE, y: src.y * SQUARE_SIZE }
+  let coordDst = { x: dst.x * SQUARE_SIZE, y: dst.y * SQUARE_SIZE }
+
+  return [coordSrc, coordDst]
+}
+
+export function movesToTransitions(moves: Game.Move[][]): Array<Transition> {
+  const fullMoves = moves.map((moveSerie) => {
+    moveSerie.unshift([0, 0])
+    return moveSerie
+  })
+  let transitions = []
+  for (let i = 0; i < fullMoves.length; i += 1) {
+    let moveSerie = moves[i]
+
+    for (let j = 0; j < moveSerie.length - 1; j += 1) {
+      let curMove = moveSerie[j]
+      let nextMove = moveSerie[j + 1]
+
+      const src: Position = {
+        x: curMove[0],
+        y: curMove[1],
+      }
+      const dst: Position = {
+        x: nextMove[0],
+        y: nextMove[1],
+      }
+
+      const transition = positionsToTransition(src, dst)
+      transitions.push(transition)
+    }
+  }
+
+  return transitions
 }

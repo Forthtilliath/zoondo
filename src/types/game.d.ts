@@ -26,7 +26,7 @@ declare global {
       type: Type
       corners: [NW: Corner, NE: Corner, SE: Corner, SW: Corner]
       value: number
-      moves: Array<Move>
+      moves: Array<Array<Move>>
       variants?: {
         corners?: Card['corners']
         moves?: Card['moves']
