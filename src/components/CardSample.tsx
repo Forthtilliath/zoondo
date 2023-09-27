@@ -15,8 +15,6 @@ export default function CardSample({
 }: Props) {
   let squares = utils.generatePositions(-2, 2)
 
-  console.log(utils.movesToTransitions(moves))
-
   return (
     <div className={styles.wrapper}>
       <div className={styles.card}>
