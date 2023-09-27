@@ -5,17 +5,9 @@ import backAdv from '@/assets/card-back-board-alt.png'
 
 import styles from '@/styles/components/Card.module.scss'
 
-type Props = Game.CardPlayed
+type Props = Game.CardOwned
 
-export default function Card({
-  slug,
-  name,
-  type,
-  corners,
-  value,
-  moves,
-  isOwned,
-}: Props) {
+export default function Card({ name, isOwned }: Props) {
   const cssClasses = clsx(
     styles.wrapper,
     isOwned ? styles.isOwned : styles.adversary
