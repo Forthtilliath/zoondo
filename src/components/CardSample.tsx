@@ -2,17 +2,15 @@ import clsx from 'clsx'
 import styles from '@/styles/components/CardSample.module.scss'
 import Image from 'next/image'
 import * as utils from '@/utils'
+import { useBoardStore } from '@/utils/hooks/useBoardStore'
 
-type Props = Game.Card
+export default function CardSample() {
+  const cardFocus = useBoardStore((state) => state.cardFocus)
 
-export default function CardSample({
-  slug,
-  name,
-  type,
-  corners,
-  value,
-  moves,
-}: Props) {
+  if (!cardFocus) return null
+
+  const { slug, name, type, corners, value, moves } = cardFocus
+
   let squares = utils.generatePositions(-2, 2)
 
   return (
@@ -53,12 +51,18 @@ export default function CardSample({
             src={`/assets/types/${type}.png`}
             alt={type}
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             style={{ objectFit: 'contain' }}
           />
         </div>
         <div className={styles.value}>{value}</div>
         <div className={styles.picture}>
-          <Image src={`/assets/tribes/${slug}.png`} alt={slug} fill />
+          <Image
+            src={`/assets/tribes/${slug}.png`}
+            alt={slug}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
         </div>
         <div className={styles.name}>{name}</div>
       </div>
