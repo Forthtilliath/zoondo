@@ -1,3 +1,5 @@
+import { availableCards } from '@/utils/data/cards'
+
 declare global {
   namespace Game {
     type Board = {
@@ -20,6 +22,17 @@ declare global {
       | 'asset'
       | 'hero'
       | 'trump'
+
+    const DndItemTypes = {
+      CLOBOULON: 'cloboulon',
+      GOLDHURE: 'gold-hure',
+      BOUCLEFEUILLE: 'bouclefeuille',
+      GROGNARD_0: 'grognard:0',
+      GROGNARD_1: 'grognard:1',
+      KASSIN_0: 'kassin:0',
+      KASSIN_1: 'kassin:1',
+      SACRECHENE: 'sacrechene',
+    }
 
     type Card = {
       slug: string
