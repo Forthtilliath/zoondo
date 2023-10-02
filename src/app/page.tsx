@@ -22,7 +22,14 @@ export default function Home() {
               return candidate.x === sq.x && candidate.y === sq.y
             }
           )
-          return <Square key={`${sq.x};${sq.y}`} card={foundCard} />
+          return (
+            <Square
+              key={`${sq.x};${sq.y}`}
+              card={foundCard}
+              x={sq.x}
+              y={sq.y}
+            />
+          )
         })}
       </Board>
       <CardSample />
